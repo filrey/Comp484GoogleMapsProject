@@ -72,7 +72,7 @@
         map.setOptions({ draggable: false, zoomControl: false, scrollwheel: false, disableDoubleClickZoom: true });   
             
 
-        var cypressHallCoords = [
+        var nordhoffHallCoords = [
                 
             { lat: 34.236692, lng: -118.530937 },
             { lat: 34.236034, lng: -118.530868 },
@@ -127,10 +127,78 @@
             new google.maps.LatLng(34.24010292377745, -118.52760815640067),
             new google.maps.LatLng(34.24078586394474, -118.52768325825309),
             new google.maps.LatLng(34.2407787684639, -118.52843642234802)
-        ];                   
+        ];    
+        var jeromeHallCoords = [
+            new google.maps.LatLng(34.23871063983549, -118.53093168144369),
+            new google.maps.LatLng(34.23906985525641, -118.5309330225482),
+            new google.maps.LatLng(34.23907052037401, -118.53028607378292),
+            new google.maps.LatLng(34.23870243542004, -118.53029143820095),
+            new google.maps.LatLng(34.23870997471507, -118.53093087673187)
+        ];
+        var vpacCoords = [
+            new google.maps.LatLng(34.23630984399094, -118.5287706255923),
+            new google.maps.LatLng(34.23578208992583, -118.5287706255923),
+            new google.maps.LatLng(34.23586191848415, -118.52757436037166),
+            new google.maps.LatLng(34.23630762654381, -118.52755558490855),
+            new google.maps.LatLng(34.23631427888505, -118.52877599001033)
+        ];  
+        var manzanitaHallCoords = [
+            new google.maps.LatLng(34.2378278944714, -118.52948570254739),
+            new google.maps.LatLng(34.23780572039727, -118.5306390524238),
+            new google.maps.LatLng(34.23759728381481, -118.53061759475167),
+            new google.maps.LatLng(34.23690101319189, -118.5305693149894),
+            new google.maps.LatLng(34.23690101319189, -118.53032791617807),
+            new google.maps.LatLng(34.237579766482185, -118.53030404449328),
+            new google.maps.LatLng(34.23759595352252, -118.52947872878758),
+            new google.maps.LatLng(34.23782739361261, -118.52948810850773)
+        ]; 
+        var collegeOfEducationCoords = [
+            new google.maps.LatLng(34.24153842203381, -118.53141260156917),
+            new google.maps.LatLng(34.241112697554755, -118.53140991936016),
+            new google.maps.LatLng(34.24108608970332, -118.53040409097957),
+            new google.maps.LatLng(34.24125682327051, -118.53040140877056),
+            new google.maps.LatLng(34.2415295527958, -118.53067767629909)
+        ]; 
+        var businessAndEconCoords = [
+            new google.maps.LatLng(34.2414519469571, -118.53024315843868),
+            new google.maps.LatLng(34.241673677831656, -118.52996689091015),
+            new google.maps.LatLng(34.24246746955737, -118.53096199045467),
+            new google.maps.LatLng(34.242378778113995, -118.53103172788906),
+            new google.maps.LatLng(34.242287869287594, -118.53091639290142),
+            new google.maps.LatLng(34.24213931075018, -118.53106927881527),
+            new google.maps.LatLng(34.24145194692326, -118.53024852285671)
+        ];  
+        var eucalyptusHallCoords = [
+            new google.maps.LatLng(34.23876673966938, -118.52881354103374),
+            new google.maps.LatLng(34.23855830546625, -118.52880281219768),
+            new google.maps.LatLng(34.23856052285412, -118.52761191139507),
+            new google.maps.LatLng(34.23876452228696, -118.52767360220241),
+            new google.maps.LatLng(34.23876762667646, -118.52881461381912)
+        ];  
+        var liveOakHallCoords = [
+            new google.maps.LatLng(34.2383920012445, -118.52881354103374),
+            new google.maps.LatLng(34.23818800090897, -118.52881085882473),
+            new google.maps.LatLng(34.238168044327836, -118.52763336906719),
+            new google.maps.LatLng(34.238385349067435, -118.52767628441143),
+            new google.maps.LatLng(34.23839089519493, -118.52881458761465)
+        ]; 
+        var citrusHallCoords = [
+            new google.maps.LatLng(34.23913482437603, -118.52826905260372),
+            new google.maps.LatLng(34.23893082584049, -118.52826368818569),
+            new google.maps.LatLng(34.238910869435486, -118.52757704267788),
+            new google.maps.LatLng(34.23912595488476, -118.52766287336635),
+            new google.maps.LatLng(34.23913151266631, -118.52826993373384)
+        ]; 
+        var cyprusHallCoords = [
+            new google.maps.LatLng(34.23670676625632, -118.53009831915188),
+            new google.maps.LatLng(34.23603488027006, -118.53009831915188),
+            new google.maps.LatLng(34.236026010452214, -118.52928560982036),
+            new google.maps.LatLng(34.236713418566, -118.52928292761135),
+            new google.maps.LatLng(34.236707653251266, -118.53009939193726)
+        ];                                                          
         //Setting coordinates to new google map polygon      
-        var cypressHall = new google.maps.Polygon({
-            paths: cypressHallCoords,
+        var nordhoffHall = new google.maps.Polygon({
+            paths: nordhoffHallCoords,
             strokeColor: '#FF0000',
             strokeOpacity: 0.8,
             strokeWeight: 2,
@@ -184,25 +252,106 @@
             strokeWeight: 2,
             fillColor: '#FF0000',
             fillOpacity: 0.35
-        });                                  
-        cypressHall.setMap(map);
+        }); 
+          
+        var jeromeHall = new google.maps.Polygon({
+            paths: jeromeHallCoords,
+            strokeColor: '#FF0000',
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: '#FF0000',
+            fillOpacity: 0.35
+        });
+        var vpac = new google.maps.Polygon({
+            paths: vpacCoords,
+            strokeColor: '#FF0000',
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: '#FF0000',
+            fillOpacity: 0.35
+        });
+        var manzanitaHall = new google.maps.Polygon({
+            paths: manzanitaHallCoords,
+            strokeColor: '#FF0000',
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: '#FF0000',
+            fillOpacity: 0.35
+        });
+        var collegeOfEducation = new google.maps.Polygon({
+            paths: collegeOfEducationCoords,
+            strokeColor: '#FF0000',
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: '#FF0000',
+            fillOpacity: 0.35
+        }); 
+        var businessAndEcon = new google.maps.Polygon({
+            paths: businessAndEconCoords,
+            strokeColor: '#FF0000',
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: '#FF0000',
+            fillOpacity: 0.35
+        });
+        var eucalyptusHall = new google.maps.Polygon({
+            paths: eucalyptusHallCoords,
+            strokeColor: '#FF0000',
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: '#FF0000',
+            fillOpacity: 0.35
+        });
+        var liveOakHall = new google.maps.Polygon({
+            paths: liveOakHallCoords,
+            strokeColor: '#FF0000',
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: '#FF0000',
+            fillOpacity: 0.35
+        });
+        var citrusHall = new google.maps.Polygon({
+            paths: citrusHallCoords,
+            strokeColor: '#FF0000',
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: '#FF0000',
+            fillOpacity: 0.35
+        }); 
+        var cyprusHall = new google.maps.Polygon({
+            paths: cyprusHallCoords,
+            strokeColor: '#FF0000',
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: '#FF0000',
+            fillOpacity: 0.35
+        });                                                    
+        nordhoffHall.setMap(map);
         jacarandaHall.setMap(map);
         sierraHall.setMap(map);
         bookStore.setMap(map);   
         oviattLibrary.setMap(map);
         bayramianHall.setMap(map);
         sequoiaHall.setMap(map);               
-
+        jeromeHall.setMap(map);
+        vpac.setMap(map);   
+        manzanitaHall.setMap(map);
+        collegeOfEducation.setMap(map);
+        businessAndEcon.setMap(map);  
+        eucalyptusHall.setMap(map);   
+        liveOakHall.setMap(map);
+        citrusHall.setMap(map);
+        cyprusHall.setMap(map);          
         // Map onClick events
-        cypressHall.addListener('click', showCypress);
+        nordhoffHall.addListener('click', showNordhoff);
         jacarandaHall.addListener('click', showJacaranda);
         sierraHall.addListener('click', showSierra);
         bookStore.addListener('click', showBookstore);
 
         }
 
-        function showCypress(event) {
-            alert('This is Cypress hall');
+        function showNordhoff(event) {
+            alert('This is Nordhoff hall');
         }   
         function showJacaranda(event) {
             alert('This is Jacaranda hall');

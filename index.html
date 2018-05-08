@@ -63,9 +63,13 @@
                     }
                 ],
                 { name: 'Styled Map' });   
-
+        
+        //Sets custom styling for the map
         map.mapTypes.set('styled_map', styledMapType);
-        map.setMapTypeId('styled_map');         
+        map.setMapTypeId('styled_map');      
+        
+        // Disables scrolling and zooming
+        map.setOptions({ draggable: false, zoomControl: false, scrollwheel: false, disableDoubleClickZoom: true });   
             
 
         var cypressHallCoords = [

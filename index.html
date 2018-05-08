@@ -10,7 +10,7 @@
            * element that contains the map. */
     
         #map {
-            height: 80%;
+            height: 90%;
             width: 35%;
         }
     
@@ -79,6 +79,32 @@
             { lat: 34.236025, lng: -118.530298 },
             { lat: 34.236692, lng: -118.530327 }
         ];
+        var jacarandaHallCoords = [
+            new google.maps.LatLng(34.241033317534516, -118.52784311776304),
+            new google.maps.LatLng(34.24208676093393, -118.5278447270639),
+            new google.maps.LatLng(34.2420794439212, -118.5287330747633),
+            new google.maps.LatLng(34.24195084070501, -118.52874648580837),
+            new google.maps.LatLng(34.24193088501591, -118.52944922440656),
+            new google.maps.LatLng(34.24103952607842, -118.52945458882459),
+            new google.maps.LatLng(34.241032973915196, -118.52784336724523)
+        ];
+        var sierraHallCoords = [
+            new google.maps.LatLng(34.23845309041983, -118.53004883228095),
+            new google.maps.LatLng(34.2384519817245, -118.53137652582518),
+            new google.maps.LatLng(34.23811549199867, -118.53137451416842),
+            new google.maps.LatLng(34.23811881809792, -118.5300468206242),
+            new google.maps.LatLng(34.23845309041983, -118.53004883228095)
+        ];
+        var bookStoreCoords = [
+            new google.maps.LatLng(34.237779111703574, -118.52866494658883),
+            new google.maps.LatLng(34.23751302227418, -118.52872931960519),
+            new google.maps.LatLng(34.23704292889356, -118.52866494658883),
+            new google.maps.LatLng(34.23701631975578, -118.52762424949105),
+            new google.maps.LatLng(34.23776137243446, -118.52774763110574),
+            new google.maps.LatLng(34.23777290305456, -118.52866615355424)
+        ];  
+
+        //Setting coordinates to new google map polygon      
         var cypressHall = new google.maps.Polygon({
             paths: cypressHallCoords,
             strokeColor: '#FF0000',
@@ -87,17 +113,55 @@
             fillColor: '#FF0000',
             fillOpacity: 0.35
         });
+        var jacarandaHall = new google.maps.Polygon({
+            paths: jacarandaHallCoords,
+            strokeColor: '#FF0000',
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: '#FF0000',
+            fillOpacity: 0.35
+        });
+        var sierraHall = new google.maps.Polygon({
+            paths: sierraHallCoords,
+            strokeColor: '#FF0000',
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: '#FF0000',
+            fillOpacity: 0.35
+        });
+        var bookStore = new google.maps.Polygon({
+            paths: bookStoreCoords,
+            strokeColor: '#FF0000',
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: '#FF0000',
+            fillOpacity: 0.35
+        });                 
         cypressHall.setMap(map);
+        jacarandaHall.setMap(map);
+        sierraHall.setMap(map);
+        bookStore.setMap(map);        
 
+        // Map onClick events
         cypressHall.addListener('click', showCypress);
+        jacarandaHall.addListener('click', showJacaranda);
+        sierraHall.addListener('click', showSierra);
+        bookStore.addListener('click', showBookstore);
 
         }
 
         function showCypress(event) {
             alert('This is Cypress hall');
         }   
-        
-             
+        function showJacaranda(event) {
+            alert('This is Jacaranda hall');
+        }           
+        function showSierra(event) {
+            alert('This is Sierra hall');
+        }
+        function showBookstore(event) {
+            alert('This is the Matador Bookstore');
+        }                           
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTfV05MkGe_Bcm8Tj5WYuBCLuS33ig4kQ&callback=initMap" async defer></script>  
      

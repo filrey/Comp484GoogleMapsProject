@@ -103,7 +103,31 @@
             new google.maps.LatLng(34.23776137243446, -118.52774763110574),
             new google.maps.LatLng(34.23777290305456, -118.52866615355424)
         ];  
-
+        var oviattCoords = [
+            new google.maps.LatLng(34.240405369311006, -118.5286365151569),
+            new google.maps.LatLng(34.240403151971734, -118.53002858163563),
+            new google.maps.LatLng(34.23965368795485, -118.53001785279957),
+            new google.maps.LatLng(34.23948073377263, -118.52931511403767),
+            new google.maps.LatLng(34.23964925323667, -118.52862578632084),
+            new google.maps.LatLng(34.24040625630081, -118.52863758802414)
+        ];  
+        var bayramianHallCoords = [
+            new google.maps.LatLng(34.24070160525722, -118.53146517280038),
+            new google.maps.LatLng(34.24037787424588, -118.53144907954629),
+            new google.maps.LatLng(34.23992110097536, -118.53121840957101),
+            new google.maps.LatLng(34.23992997038284, -118.53081607821878),
+            new google.maps.LatLng(34.240235964368956, -118.53081071380075),
+            new google.maps.LatLng(34.240253703116664, -118.53015089038308),
+            new google.maps.LatLng(34.24069717059423, -118.53012406845664),
+            new google.maps.LatLng(34.2407033792306, -118.53146731853485)
+        ];
+        var sequoiaHallCoords = [
+            new google.maps.LatLng(34.24077699462743, -118.52843427677726),
+            new google.maps.LatLng(34.24010292377745, -118.52843964119529),
+            new google.maps.LatLng(34.24010292377745, -118.52760815640067),
+            new google.maps.LatLng(34.24078586394474, -118.52768325825309),
+            new google.maps.LatLng(34.2407787684639, -118.52843642234802)
+        ];                   
         //Setting coordinates to new google map polygon      
         var cypressHall = new google.maps.Polygon({
             paths: cypressHallCoords,
@@ -136,11 +160,38 @@
             strokeWeight: 2,
             fillColor: '#FF0000',
             fillOpacity: 0.35
-        });                 
+        });
+        var oviattLibrary = new google.maps.Polygon({
+            paths: oviattCoords,
+            strokeColor: '#FF0000',
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: '#FF0000',
+            fillOpacity: 0.35
+        });
+        var bayramianHall = new google.maps.Polygon({
+            paths: bayramianHallCoords,
+            strokeColor: '#FF0000',
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: '#FF0000',
+            fillOpacity: 0.35
+        }); 
+        var sequoiaHall = new google.maps.Polygon({
+            paths: sequoiaHallCoords,
+            strokeColor: '#FF0000',
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: '#FF0000',
+            fillOpacity: 0.35
+        });                                  
         cypressHall.setMap(map);
         jacarandaHall.setMap(map);
         sierraHall.setMap(map);
-        bookStore.setMap(map);        
+        bookStore.setMap(map);   
+        oviattLibrary.setMap(map);
+        bayramianHall.setMap(map);
+        sequoiaHall.setMap(map);               
 
         // Map onClick events
         cypressHall.addListener('click', showCypress);

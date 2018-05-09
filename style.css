@@ -1,0 +1,13 @@
+.dialogueBox {
+    width: 60%;
+    background-color: #D3D3D3;
+    height: 90%;
+    float: right;   
+    padding: 20px;
+    border-radius: 10px; 
+    overflow-y: scroll;
+}
+
+.margin__bottom-15 {
+    margin-bottom: 15px;
+}

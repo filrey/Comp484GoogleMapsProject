@@ -14,9 +14,14 @@ bootstrap_alert = function (message,type) {
 bootstrap_alert.warning = function (message,id) {
     if (id == prevIndex) {
         $('#alert_placeholder').append('<div class="alert alert-success" role="alert">Correct!</div>')
+        answers[id] = 1;
+        console.log(answers)
         
     } else {
-        $('#alert_placeholder').append('<div class="alert alert-danger" role="alert">Sorry that is incorrect!</div>')        
+        $('#alert_placeholder').append('<div class="alert alert-danger" role="alert">Sorry that is incorrect!</div>') 
+        answers[id] = 2;  
+        console.log(answers)
+             
     }
     $('#alert_placeholder').append('<div class="alert alert-primary" role="alert">'+ message +'</div>')
     prevIndex = index;
@@ -37,3 +42,19 @@ $('#start').on('click', function () {
     // start.style.visibility ='hidden'
 
 });
+
+function changeBorder(id) {
+    if (id == prevIndex) {
+        return 'green'
+    } else {
+        return '#FF0000'
+    }
+    // alert('This is Nordhoff hall');
+}
+function changeFill(id) {
+    if (id == prevIndex) {
+        return '#00ff00'
+    } else {
+        return '#FF0000'
+    }
+}

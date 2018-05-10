@@ -1,5 +1,4 @@
-var map;
-function initMap() {
+function changeMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         center: { lat: 34.238923, lng: -118.529498 },
         zoom: 17,
@@ -163,136 +162,139 @@ function initMap() {
         new google.maps.LatLng(34.236713418566, -118.52928292761135),
         new google.maps.LatLng(34.236707653251266, -118.53009939193726)
     ];
-    //Setting coordinates to new google map polygon      
+    //Setting coordinates to new google map polygon   
+    var border = 'blue',
+        fill = '#33ccff';
     var nordhoffHall = new google.maps.Polygon({
         paths: nordhoffHallCoords,
-        strokeColor: '#FF0000',
+        strokeColor: border,
         strokeOpacity: 0.8,
         strokeWeight: 2,
-        fillColor: '#FF0000',
+        fillColor: fill,
         fillOpacity: 0.35
     });
     var jacarandaHall = new google.maps.Polygon({
         paths: jacarandaHallCoords,
-        strokeColor: '#FF0000',
+        strokeColor: border,
         strokeOpacity: 0.8,
         strokeWeight: 2,
-        fillColor: '#FF0000',
+        fillColor: fill,
         fillOpacity: 0.35
     });
     var sierraHall = new google.maps.Polygon({
         paths: sierraHallCoords,
-        strokeColor: '#FF0000',
+        strokeColor: border,
         strokeOpacity: 0.8,
         strokeWeight: 2,
-        fillColor: '#FF0000',
+        fillColor: fill,
         fillOpacity: 0.35
     });
     var bookStore = new google.maps.Polygon({
         paths: bookStoreCoords,
-        strokeColor: '#FF0000',
+        strokeColor: border,
         strokeOpacity: 0.8,
         strokeWeight: 2,
-        fillColor: '#FF0000',
+        fillColor: fill,
         fillOpacity: 0.35
     });
     var oviattLibrary = new google.maps.Polygon({
         paths: oviattCoords,
-        strokeColor: '#FF0000',
+        strokeColor: border,
         strokeOpacity: 0.8,
         strokeWeight: 2,
-        fillColor: '#FF0000',
+        fillColor: fill,
         fillOpacity: 0.35
     });
     var bayramianHall = new google.maps.Polygon({
         paths: bayramianHallCoords,
-        strokeColor: '#FF0000',
+        strokeColor: border,
         strokeOpacity: 0.8,
         strokeWeight: 2,
-        fillColor: '#FF0000',
+        fillColor: fill,
         fillOpacity: 0.35
     });
     var sequoiaHall = new google.maps.Polygon({
         paths: sequoiaHallCoords,
-        strokeColor: '#FF0000',
+        strokeColor: border,
         strokeOpacity: 0.8,
         strokeWeight: 2,
-        fillColor: '#FF0000',
+        fillColor: fill,
         fillOpacity: 0.35
     });
 
     var jeromeHall = new google.maps.Polygon({
         paths: jeromeHallCoords,
-        strokeColor: '#FF0000',
+        strokeColor: border,
         strokeOpacity: 0.8,
         strokeWeight: 2,
-        fillColor: '#FF0000',
+        fillColor: fill,
         fillOpacity: 0.35
     });
     var vpac = new google.maps.Polygon({
         paths: vpacCoords,
-        strokeColor: '#FF0000',
+        strokeColor: border,
         strokeOpacity: 0.8,
         strokeWeight: 2,
-        fillColor: '#FF0000',
+        fillColor: fill,
         fillOpacity: 0.35
     });
     var manzanitaHall = new google.maps.Polygon({
         paths: manzanitaHallCoords,
-        strokeColor: '#FF0000',
+        strokeColor: border,
         strokeOpacity: 0.8,
         strokeWeight: 2,
-        fillColor: '#FF0000',
+        fillColor: fill,
         fillOpacity: 0.35
     });
     var collegeOfEducation = new google.maps.Polygon({
         paths: collegeOfEducationCoords,
-        strokeColor: '#FF0000',
+        strokeColor: border,
         strokeOpacity: 0.8,
         strokeWeight: 2,
-        fillColor: '#FF0000',
+        fillColor: fill,
         fillOpacity: 0.35
     });
     var businessAndEcon = new google.maps.Polygon({
         paths: businessAndEconCoords,
-        strokeColor: '#FF0000',
+        strokeColor: border,
         strokeOpacity: 0.8,
         strokeWeight: 2,
-        fillColor: '#FF0000',
+        fillColor: fill,
         fillOpacity: 0.35
     });
     var eucalyptusHall = new google.maps.Polygon({
         paths: eucalyptusHallCoords,
-        strokeColor: '#FF0000',
+        strokeColor: border,
         strokeOpacity: 0.8,
         strokeWeight: 2,
-        fillColor: '#FF0000',
+        fillColor: fill,
         fillOpacity: 0.35
     });
     var liveOakHall = new google.maps.Polygon({
         paths: liveOakHallCoords,
-        strokeColor: '#FF0000',
+        strokeColor: border,
         strokeOpacity: 0.8,
         strokeWeight: 2,
-        fillColor: '#FF0000',
+        fillColor: fill,
         fillOpacity: 0.35
     });
     var citrusHall = new google.maps.Polygon({
         paths: citrusHallCoords,
-        strokeColor: '#FF0000',
+        strokeColor: border,
         strokeOpacity: 0.8,
         strokeWeight: 2,
-        fillColor: '#FF0000',
+        fillColor: fill,
         fillOpacity: 0.35
     });
     var cyprusHall = new google.maps.Polygon({
         paths: cyprusHallCoords,
-        strokeColor: '#FF0000',
+        strokeColor: border,
         strokeOpacity: 0.8,
         strokeWeight: 2,
-        fillColor: '#FF0000',
+        fillColor: fill,
         fillOpacity: 0.35
     });
+    //Set Map Data
     nordhoffHall.setMap(map);
     jacarandaHall.setMap(map);
     sierraHall.setMap(map);
@@ -310,22 +312,241 @@ function initMap() {
     citrusHall.setMap(map);
     cyprusHall.setMap(map);
     // Map onClick events
-    nordhoffHall.addListener('click', showNordhoff);
-    jacarandaHall.addListener('click', showJacaranda);
-    sierraHall.addListener('click', showSierra);
-    bookStore.addListener('click', showBookstore);
+    nordhoffHall.addListener('click', checkNordhoff);
+    jacarandaHall.addListener('click', checkJacaranda);
+    sierraHall.addListener('click', checkSierra);
+    bookStore.addListener('click', checkBookstore);
+    oviattLibrary.addListener('click', checkLibrary);
+    bayramianHall.addListener('click', checkBayramian);
+    sequoiaHall.addListener('click', checkSequoia);
+    jeromeHall.addListener('click', checkJerome);
+    vpac.addListener('click', checkVpac);
+    manzanitaHall.addListener('click', checkManzanita);
+    collegeOfEducation.addListener('click', checkEducation);
+    businessAndEcon.addListener('click', checkBusinessAndEcon);
+    eucalyptusHall.addListener('click', checkEucalyptus);
+    liveOakHall.addListener('click', checkLiveOak);
+    citrusHall.addListener('click', checkCitrus);
+    cyprusHall.addListener('click', checkCyprus);
 
+    // oviattLibrary.setOptions({ fillColor: '#00ff00' });
+    for(i = 0;i > 16; i++) {
+        switch (i) {
+            case 0:
+                if (answers[i] == 1) {
+                    nordhoffHall.setOptions({ fillColor: '#00ff00' });
+                    nordhoffHall.setOptions({ strokeColor: 'green' }); 
+                    console.log('switch0')                     
+                }
+                 if (answers[i] == 2) {
+                     nordhoffHall.setOptions({ fillColor: '#FF0000' });
+                     nordhoffHall.setOptions({ strokeColor: '#FF0000' });                     
+                 }
+                break;
+            case 1:
+                if (answers[i] == 1) {
+                    jacarandaHall.setOptions({ fillColor: '#00ff00' });
+                    jacarandaHall.setOptions({ strokeColor: 'green' });
+                }
+                if (answers[i] == 2) {
+                    jacarandaHall.setOptions({ fillColor: '#FF0000' });
+                    jacarandaHall.setOptions({ strokeColor: '#FF0000' });
+                }
+                break;
+            case 2:
+                if (answers[i] == 1) {
+                    sierraHall.setOptions({ fillColor: '#00ff00' });
+                    sierraHall.setOptions({ strokeColor: 'green' });
+                }
+                if (answers[i] == 2) {
+                    sierraHall.setOptions({ fillColor: '#FF0000' });
+                    sierraHall.setOptions({ strokeColor: '#FF0000' });
+                }
+                break;
+            case 3:
+                if (answers[i] == 1) {
+                    bookStore.setOptions({ fillColor: '#00ff00' });
+                    bookStore.setOptions({ strokeColor: 'green' });
+                }
+                if (answers[i] == 2) {
+                    bookStore.setOptions({ fillColor: '#FF0000' });
+                    bookStore.setOptions({ strokeColor: '#FF0000' });
+                }
+                break;
+            case 4:
+                if (answers[i] == 1) {
+                    oviattLibrary.setOptions({ fillColor: '#00ff00' });
+                    oviattLibrary.setOptions({ strokeColor: 'green' });
+                }
+                if (answers[i] == 2) {
+                    oviattLibrary.setOptions({ fillColor: '#FF0000' });
+                    oviattLibrary.setOptions({ strokeColor: '#FF0000' });
+                }
+                break;
+            case 5:
+                if (answers[i] == 1) {
+                    bayramianHall.setOptions({ fillColor: '#00ff00' });
+                    bayramianHall.setOptions({ strokeColor: 'green' });
+                }
+                if (answers[i] == 2) {
+                    bayramianHall.setOptions({ fillColor: '#FF0000' });
+                    bayramianHall.setOptions({ strokeColor: '#FF0000' });
+                }
+                break;
+            case 6:
+                if (answers[i] == 1) {
+                    sequoiaHall.setOptions({ fillColor: '#00ff00' });
+                    sequoiaHall.setOptions({ strokeColor: 'green' });
+                }
+                if (answers[i] == 2) {
+                    sequoiaHall.setOptions({ fillColor: '#FF0000' });
+                    sequoiaHall.setOptions({ strokeColor: '#FF0000' });
+                }
+                break;
+            case 7:
+                if (answers[i] == 1) {
+                    jeromeHall.setOptions({ fillColor: '#00ff00' });
+                    jeromeHall.setOptions({ strokeColor: 'green' });
+                }
+                if (answers[i] == 2) {
+                    jeromeHall.setOptions({ fillColor: '#FF0000' });
+                    jeromeHall.setOptions({ strokeColor: '#FF0000' });
+                }
+                break;
+            case 8:
+                if (answers[i] == 1) {
+                    vpac.setOptions({ fillColor: '#00ff00' });
+                    vpac.setOptions({ strokeColor: 'green' });
+                }
+                if (answers[i] == 2) {
+                    vpac.setOptions({ fillColor: '#FF0000' });
+                    vpac.setOptions({ strokeColor: '#FF0000' });
+                }
+                break;
+            case 9:
+                if (answers[i] == 1) {
+                    manzanitaHall.setOptions({ fillColor: '#00ff00' });
+                    manzanitaHall.setOptions({ strokeColor: 'green' });
+                }
+                if (answers[i] == 2) {
+                    manzanitaHall.setOptions({ fillColor: '#FF0000' });
+                    manzanitaHall.setOptions({ strokeColor: '#FF0000' });
+                }
+                break;
+            case 10:
+                if (answers[i] == 1) {
+                    collegeOfEducation.setOptions({ fillColor: '#00ff00' });
+                    collegeOfEducation.setOptions({ strokeColor: 'green' });
+                }
+                if (answers[i] == 2) {
+                    collegeOfEducation.setOptions({ fillColor: '#FF0000' });
+                    collegeOfEducation.setOptions({ strokeColor: '#FF0000' });
+                }
+                break;
+            case 11:
+                if (answers[i] == 1) {
+                    businessAndEcon.setOptions({ fillColor: '#00ff00' });
+                    businessAndEcon.setOptions({ strokeColor: 'green' });
+                }
+                if (answers[i] == 2) {
+                    businessAndEcon.setOptions({ fillColor: '#FF0000' });
+                    businessAndEcon.setOptions({ strokeColor: '#FF0000' });
+                }
+                break;
+            case 12:
+                if (answers[i] == 1) {
+                    eucalyptusHall.setOptions({ fillColor: '#00ff00' });
+                    eucalyptusHall.setOptions({ strokeColor: 'green' });
+                }
+                if (answers[i] == 2) {
+                    eucalyptusHall.setOptions({ fillColor: '#FF0000' });
+                    eucalyptusHall.setOptions({ strokeColor: '#FF0000' });
+                }
+                break;
+            case 13:
+                if (answers[i] == 1) {
+                    liveOakHall.setOptions({ fillColor: '#00ff00' });
+                    liveOakHall.setOptions({ strokeColor: 'green' });
+                }
+                if (answers[i] == 2) {
+                    liveOakHall.setOptions({ fillColor: '#FF0000' });
+                    liveOakHall.setOptions({ strokeColor: '#FF0000' });
+                }
+                break;
+            case 14:
+                if (answers[i] == 1) {
+                    citrusHall.setOptions({ fillColor: '#00ff00' });
+                    citrusHall.setOptions({ strokeColor: 'green' });
+                }
+                if (answers[i] == 2) {
+                    citrusHall.setOptions({ fillColor: '#FF0000' });
+                    citrusHall.setOptions({ strokeColor: '#FF0000' });
+                }
+                break;
+            case 15:
+                if (answers[i] == 1) {
+                    cyprusHall.setOptions({ fillColor: '#00ff00' });
+                    cyprusHall.setOptions({ strokeColor: 'green' });                      
+                }
+                 if (answers[i] == 2) {
+                     cyprusHall.setOptions({ fillColor: '#FF0000' });
+                     cyprusHall.setOptions({ strokeColor: '#FF0000' });                     
+                 }
+                break;
+
+
+
+            default:
+                break;
+        }
+    }
 }
 
-function showNordhoff(event) {
-    alert('This is Nordhoff hall');
+function checkNordhoff(event) {
+    bootstrap_alert.warning(questions[index], 0);
 }
-function showJacaranda(event) {
-    alert('This is Jacaranda hall');
+function checkJacaranda(event) {
+    bootstrap_alert.warning(questions[index], 1);
 }
-function showSierra(event) {
-    alert('This is Sierra hall');
+function checkSierra(event) {
+    bootstrap_alert.warning(questions[index], 2);
 }
-function showBookstore(event) {
-    alert('This is the Matador Bookstore');
-}   
+function checkBookstore(event) {
+    bootstrap_alert.warning(questions[index], 3);
+}
+function checkLibrary(event) {
+    bootstrap_alert.warning(questions[index], 4);
+}
+function checkBayramian(event) {
+    bootstrap_alert.warning(questions[index], 5);
+}
+function checkSequoia(event) {
+    bootstrap_alert.warning(questions[index], 6);
+}
+function checkJerome(event) {
+    bootstrap_alert.warning(questions[index], 7);
+}
+function checkVpac(event) {
+    bootstrap_alert.warning(questions[index], 8);
+}
+function checkManzanita(event) {
+    bootstrap_alert.warning(questions[index], 9);
+}
+function checkEducation(event) {
+    bootstrap_alert.warning(questions[index], 10);
+}
+function checkBusinessAndEcon(event) {
+    bootstrap_alert.warning(questions[index], 11);
+}
+function checkEucalyptus(event) {
+    bootstrap_alert.warning(questions[index], 12);
+}
+function checkLiveOak(event) {
+    bootstrap_alert.warning(questions[index], 13);
+}
+function checkCitrus(event) {
+    bootstrap_alert.warning(questions[index], 14);
+}
+function checkCyprus(event) {
+    bootstrap_alert.warning(questions[index], 15);
+}  
